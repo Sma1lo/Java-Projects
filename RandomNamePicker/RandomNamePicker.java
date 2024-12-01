@@ -47,7 +47,7 @@ public class RandomNamePicker {
         boyNames.add("Alex");
         boyNames.add("Mike");
 
-        girlNames.add("Ann");
+        girlNames.add("Anna");
         girlNames.add("Maria");
         girlNames.add("Kate");
     }
