@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class RandomNameCreator {
+public class RandomNamePicker {
     private static ArrayList<String> boyNames = new ArrayList<>();
     private static ArrayList<String> girlNames = new ArrayList<>();
     private static Random random = new Random();
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
       initializeNames();
 
         while (true) {
