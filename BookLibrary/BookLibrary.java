@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class BookLib {
+public class BookLibrary {
     private static List<Book> library = new ArrayList<>();
     
     public static void main(String[] args) {
