@@ -72,7 +72,7 @@ public class MorseCodeCompiler {
         while (true) {
             System.out.println("1. Convert text to Morse code");
             System.out.println("2. Translate Morse code into text");
-            System.out.println("3. Exit\n");
+            System.out.println("0. Exit\n");
             System.out.print("Enter number: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); 
@@ -95,7 +95,7 @@ public class MorseCodeCompiler {
                     System.out.println("Text: " + translatedText);
                     break;
 
-                case 3:
+                case 0:
                     scanner.close();
                     System.exit(0);
                     return;
