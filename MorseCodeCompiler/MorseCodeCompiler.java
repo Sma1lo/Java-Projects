@@ -77,14 +77,12 @@ public class MorseCodeCompiler {
             int choice = scanner.nextInt();
             scanner.nextLine(); 
             
-            System.out.print("\033[H\033[J");
             
             switch (choice) {
                 case 1:
                     System.out.print("Enter text to be translated into Morse code: ");
                     String inputText = scanner.nextLine().toUpperCase();
                     
-                    System.out.print("\033[H\033[J");
                     
                     String morseCode = convertTextToMorse(inputText);
                     System.out.println("Morse code: " + morseCode);
@@ -93,7 +91,6 @@ public class MorseCodeCompiler {
                 case 2:
                     System.out.print("Enter Morse code to convert to text (separate characters with spaces): ");
                     String inputMorse = scanner.nextLine();
-                    System.out.print("\033[H\033[J");
                     String translatedText = convertMorseToText(inputMorse);
                     System.out.println("Text: " + translatedText);
                     break;
