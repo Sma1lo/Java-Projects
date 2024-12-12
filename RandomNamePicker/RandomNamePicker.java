@@ -16,11 +16,10 @@ public class RandomNamePicker {
             System.out.println("2. Get a random girl's name");
             System.out.println("3. Add a name");
             System.out.println("4. Remove a name");
-            System.out.println("5. Exit\n");
+            System.out.println("0. Exit\n");
             System.out.print("Enter number: ");
             int choice = scanner.nextInt();
             scanner.nextLine();     
-              System.out.print("\033[H\033[J");
 
             switch (choice) {
                 case 1:
@@ -35,8 +34,8 @@ public class RandomNamePicker {
                 case 4:
                     removeName();
                     break;
-                case 5:
-                    System.out.println("Exiting the program.");
+                case 0:
+                    System.exit(0);
                     return;
                 default:
                     System.out.println("Invalid choice, please try again.\n");
@@ -65,19 +64,15 @@ public class RandomNamePicker {
     private static void addName() {
         System.out.print("Enter a name: ");
         String name = scanner.nextLine();
-                          System.out.print("\033[H\033[J");
 
         System.out.println("Enter 'boy' for a boy's name or 'girl' for a girl's name: ");
         String gender = scanner.nextLine();
-                  System.out.print("\033[H\033[J");
 
         if (gender.equalsIgnoreCase("boy")) {
             boyNames.add(name);
-            System. out. print("\033[H\033[J");
             System.out.println("Name added to the boys' list.\n");
         } else if (gender.equalsIgnoreCase("girl")) {
             girlNames.add(name);
-            System.out.print("\033[H\033[J");
 
             System.out.println("Name added to the girls' list.\n");
         } else {
@@ -89,11 +84,9 @@ public class RandomNamePicker {
         System.out.print("Enter a name to remove: ");
         String name = scanner.nextLine();
         if (boyNames.remove(name)) {
-            System.out.print("\033[H\033[J");
 
             System.out.println("Name removed from the boys' list.\n");
         } else if (girlNames.remove(name)) {
-             System.out.print("\033[H\033[J");
 
             System.out.println("Name removed from the girls' list.\n");
         } else {
