@@ -12,10 +12,10 @@ public class MathQuizGenerator {
         Random random = new Random();
         int score = 0;
 
-        System.out.println("Choose difficulty level:");
         System.out.println("1. Easy (numbers from 1 to 10)");
         System.out.println("2. Medium (numbers from 1 to 50)");
         System.out.println("3. Hard (numbers from 1 to 100)");
+        System.out.print("\nChoose difficulty level: ");
 
         int level = scanner.nextInt();
         int maxNumber;
