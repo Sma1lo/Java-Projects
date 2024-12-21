@@ -3,23 +3,23 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-class Question {
-    String question;
-    String[] options;
-    int correctAnswerIndex;
-
-    public Question(String question, String[] options, int correctAnswerIndex) {
-        this.question = question;
-        this.options = options;
-        this.correctAnswerIndex = correctAnswerIndex;
-    }
-
-    public boolean isCorrect(int answer) {
-        return answer == correctAnswerIndex;
-    }
-}
-
 public class Quiz {
+
+    static class Question {
+        String question;
+        String[] options;
+        int correctAnswerIndex;
+
+        public Question(String question, String[] options, int correctAnswerIndex) {
+            this.question = question;
+            this.options = options;
+            this.correctAnswerIndex = correctAnswerIndex;
+        }
+
+        public boolean isCorrect(int answer) {
+            return answer == correctAnswerIndex;
+        }
+    }
 
     private static List<Question> questions = new ArrayList<>();
 
