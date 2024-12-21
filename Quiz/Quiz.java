@@ -104,7 +104,7 @@ public class Quiz {
         questions.add(new Question(
                 "How many angles does a triangle have?",
                 new String[]{"2", "3", "4", "5"},
-                2
+                1
         ));
     }
 }
