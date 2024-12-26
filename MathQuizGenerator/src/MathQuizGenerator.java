@@ -84,4 +84,4 @@ public class MathQuizGenerator {
             return 0;
         }
     }
-          }
+}
