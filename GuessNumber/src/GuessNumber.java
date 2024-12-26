@@ -101,8 +101,7 @@ public class GuessNumber {
                     System.out.printf("\nYou lose... The valid number was: %d\n", numberToGuess);
                 }
             }
-                    }
-
+        }
         playAgain(scanner, random);
     }
 
@@ -115,7 +114,8 @@ public class GuessNumber {
                 startGame(scanner, random);
                 break;
             } else if (playAgainResponse.equals("no")) {
-                break;
+                System.out.println("Thank you for playing! Goodbye!");
+                System.exit(0);
             } else {
                 System.out.println("Invalid input. Please enter 'yes' or 'no'.");
             }
