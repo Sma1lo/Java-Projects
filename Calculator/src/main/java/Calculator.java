@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Calculator {
 
-    public static String calculate(int firstNumber, int secondNumber, String operation) {
+    public static String calculate(double firstNumber, double secondNumber, String operation) {
         switch (operation) {
             case "+":
                 return String.valueOf(firstNumber + secondNumber);
@@ -36,10 +36,10 @@ public class Calculator {
                 }
 
                 System.out.print("Enter the first number: ");
-                int firstNumber = scanner.nextInt();
+                double firstNumber = scanner.nextDouble();
 
                 System.out.print("Enter the second number: ");
-                int secondNumber = scanner.nextInt();
+                double secondNumber = scanner.nextDouble();
                 scanner.nextLine();
 
                 String result = calculate(firstNumber, secondNumber, operation);
