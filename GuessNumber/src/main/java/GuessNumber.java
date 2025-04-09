@@ -93,10 +93,10 @@ public class GuessNumber {
     private static void mainMenu() {
         System.out.println(ConsoleColor.GREEN + "=====" + ConsoleColor.RESET + ConsoleColor.YELLOW + " GUESS THE NUMBER " + ConsoleColor.RESET + ConsoleColor.GREEN + "=====" + ConsoleColor.RESET);
 
-        System.out.println(ConsoleColor.GREEN + "\t\t[" + ConsoleColor.YELLOW + "1" + ConsoleColor.GREEN + "]" + ConsoleColor.RESET + ConsoleColor.GREEN + " EASY" + ConsoleColor.RESET);
-        System.out.println(ConsoleColor.GREEN + "\t\t[" + ConsoleColor.YELLOW + "2" + ConsoleColor.GREEN + "]" + ConsoleColor.RESET + ConsoleColor.YELLOW + " MEDIUM" + ConsoleColor.RESET);
-        System.out.println(ConsoleColor.GREEN + "\t\t[" + ConsoleColor.YELLOW + "3" + ConsoleColor.GREEN + "]" + ConsoleColor.RESET + ConsoleColor.RED + " HARD" + ConsoleColor.RESET);
-        System.out.println(ConsoleColor.GREEN + "\t\t[" + ConsoleColor.YELLOW + "0" + ConsoleColor.GREEN + "]" + ConsoleColor.RESET + " Exit");
+        System.out.println(ConsoleColor.GREEN + "\t[" + ConsoleColor.YELLOW + "1" + ConsoleColor.GREEN + "]" + ConsoleColor.RESET + ConsoleColor.GREEN + " EASY" + ConsoleColor.RESET);
+        System.out.println(ConsoleColor.GREEN + "\t[" + ConsoleColor.YELLOW + "2" + ConsoleColor.GREEN + "]" + ConsoleColor.RESET + ConsoleColor.YELLOW + " MEDIUM" + ConsoleColor.RESET);
+        System.out.println(ConsoleColor.GREEN + "\t[" + ConsoleColor.YELLOW + "3" + ConsoleColor.GREEN + "]" + ConsoleColor.RESET + ConsoleColor.RED + " HARD" + ConsoleColor.RESET);
+        System.out.println(ConsoleColor.GREEN + "\t[" + ConsoleColor.YELLOW + "0" + ConsoleColor.GREEN + "]" + ConsoleColor.RESET + " Exit");
 
         System.out.println(ConsoleColor.GREEN + "============================" + ConsoleColor.RESET);
         System.out.print("\nChoose difficulty: ");
