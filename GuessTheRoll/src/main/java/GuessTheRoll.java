@@ -11,8 +11,15 @@ public class GuessTheRoll {
             MainMenu();
 
             try {
-                System.out.print("\nEnter a number from 1 to 6: ");
-                int input = scanner.nextInt();
+                System.out.print("\nEnter a number from 1 to 6 or q to quit: ");
+                String inputStr = scanner.nextLine().trim().toLowerCase();
+
+                if (inputStr.equals("q")) {
+                    System.out.println("\nThanks for playing! Goodbye!");
+                    break;
+                }
+
+                int input = Integer.parseInt(inputStr);
 
                 if (input < 1 || input > 6) {
                     System.out.println("Please enter a number between 1 and 6.");
@@ -35,8 +42,7 @@ public class GuessTheRoll {
                 }
 
             } catch (Exception e) {
-                System.out.println(ConsoleColor.RED + "\nInvalid input. Please enter a valid number.\n" + ConsoleColor.RESET);
-                scanner.nextLine();
+                System.out.println(ConsoleColor.RED + "\nInvalid input. Please enter a number or 'q' to quit.\n" + ConsoleColor.RESET);
             }
         }
     }
