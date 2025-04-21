@@ -1,3 +1,8 @@
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class ConsoleColor {
     public static final String RESET = "\u001B[0m";
 
