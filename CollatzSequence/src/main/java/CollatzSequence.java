@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class CollatzSequence {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
