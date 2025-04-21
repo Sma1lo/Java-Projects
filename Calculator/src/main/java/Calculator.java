@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class Calculator {
 
     public static String calculate(double firstNumber, double secondNumber, String operation) {
