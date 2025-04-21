@@ -1,6 +1,11 @@
 import java.util.Scanner;
 import java.util.Random;
 
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class GuessTheRoll {
 
     public static void main(String[] args) {
