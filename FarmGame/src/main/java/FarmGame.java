@@ -1,3 +1,8 @@
+/**
+ *
+ *@author Sma1lo
+ */
+
 import java.util.Scanner;
 
 public class FarmGame {
@@ -381,4 +386,5 @@ public class FarmGame {
         scanner.close();
         System.exit(0);
     }
+
 }
