@@ -1,3 +1,8 @@
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class VegetableType {
     private String name;
     private int seedPrice;
@@ -32,4 +37,5 @@ public class VegetableType {
     public int getGrowthStages() {
         return growthStages;
     }
+
 }
