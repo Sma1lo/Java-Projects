@@ -1,3 +1,8 @@
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class VegetableManager {
     public static final VegetableType CORN = new VegetableType("corn", "Corn", 5, 10, 5);
     public static final VegetableType CABBAGE = new VegetableType("cabbage", "Cabbage", 3, 7, 4);
@@ -18,4 +23,5 @@ public class VegetableManager {
         }
         return null;
     }
+
 }
