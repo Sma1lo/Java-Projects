@@ -3,6 +3,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class Player {
     private int coins;
     private List<Field> fields;
@@ -86,4 +91,5 @@ public class Player {
     public Map<String, Integer> getInventory() {
         return inventory;
     }
+
 }
