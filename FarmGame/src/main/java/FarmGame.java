@@ -1,9 +1,9 @@
+import java.util.Scanner;
+
 /**
  *
  *@author Sma1lo
  */
-
-import java.util.Scanner;
 
 public class FarmGame {
     private Player player;
@@ -388,3 +388,4 @@ public class FarmGame {
     }
 
 }
+
