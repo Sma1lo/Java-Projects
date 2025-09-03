@@ -1,3 +1,8 @@
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class Field {
     private int height;
     private int width;
@@ -119,4 +124,5 @@ public class Field {
     public int getWidth() {
         return width;
     }
+
 }
