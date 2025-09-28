@@ -2,6 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class MonteCarloPanel extends JPanel {
     private MonteCarloLogic logic;
 
