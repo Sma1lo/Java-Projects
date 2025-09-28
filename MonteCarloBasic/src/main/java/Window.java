@@ -3,6 +3,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class Window extends JFrame {
     private JTextField particlesField;
     private MonteCarloPanel drawingPanel;
