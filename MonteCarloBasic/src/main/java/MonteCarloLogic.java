@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class MonteCarloLogic {
     private int pointsInsideCircle = 0;
     private int totalPoints = 0;
