@@ -1,6 +1,11 @@
 import java.security.SecureRandom;
 import java.util.Scanner;
 
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class PasswordGenerator {
 
     private static final String UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -76,4 +81,5 @@ public class PasswordGenerator {
 
         return password.toString();
     }
+
 }
