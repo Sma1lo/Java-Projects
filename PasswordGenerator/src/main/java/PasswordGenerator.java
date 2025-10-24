@@ -81,5 +81,4 @@ public class PasswordGenerator {
 
         return password.toString();
     }
-
 }
