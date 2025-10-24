@@ -1,3 +1,8 @@
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class Book {
     private String title;
     private String author;
