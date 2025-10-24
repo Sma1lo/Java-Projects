@@ -2,6 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class BookLibrary {
     private static List<Book> library = new ArrayList<>();
 
