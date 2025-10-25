@@ -3,6 +3,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class RandomWalkLogic {
     private int x, y;
     private final int width, height, stepSize;
@@ -48,3 +53,4 @@ public class RandomWalkLogic {
         return y;
     }
 }
+
