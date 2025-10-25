@@ -1,5 +1,10 @@
 import javax.swing.*;
 
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class RandomWalkLauncher {
     private static final int WIDTH = 800;
     private static final int HEIGHT = 600;
@@ -19,3 +24,4 @@ public class RandomWalkLauncher {
         });
     }
 }
+
