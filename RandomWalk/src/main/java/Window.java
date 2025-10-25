@@ -3,6 +3,11 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.util.List;
 
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class Window extends JPanel {
     private static final int DELAY = 20;
     private final RandomWalkLogic logic;
@@ -38,3 +43,4 @@ public class Window extends JPanel {
         g2.fill(new Ellipse2D.Double(logic.getX() - r / 2, logic.getY() - r / 2, r, r));
     }
 }
+
