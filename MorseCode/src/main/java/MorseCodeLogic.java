@@ -1,6 +1,11 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class MorseCodeLogic {
 
     public static void start() {
