@@ -1,5 +1,10 @@
 import java.util.HashMap;
 
+/**
+ *
+ *@author Sma1lo
+ */
+
 public class MorseCodeList {
     static final HashMap<Character, String> textToMorse = new HashMap<>();
     static final HashMap<String, Character> morseToText = new HashMap<>();
@@ -64,3 +69,4 @@ public class MorseCodeList {
         }
     }
 }
+
